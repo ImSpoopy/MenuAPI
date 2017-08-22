@@ -48,8 +48,10 @@ public class Menu {
 	}
 	
 	public void onClick(InventoryClickEvent event) {
-		if (event.getCurrentItem() != null || event.getCurrentItem().getType() != Material.AIR) {
-			if (events.containsKey(event.getCurrentItem())) events.get(event.getCurrentItem()).clickEvent(event);
+		if (event.getCurrentItem() != null) {
+			if (event.getCurrentItem().getType() != Material.AIR) {
+				if (events.containsKey(event.getCurrentItem())) events.get(event.getCurrentItem()).clickEvent(event);
+			}
 		}
 	}
 }
